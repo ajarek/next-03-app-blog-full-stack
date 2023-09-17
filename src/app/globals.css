@@ -17,15 +17,6 @@ h1,
 h2 {
   @apply font-bold ;
 }
-
-main {
-  @apply max-w-7xl mx-auto px-8;
-}
-
-main>h2 {
-  @apply mb-4 pb-2 text-base;
-}
-
-nav {
-  @apply border-b-2 border-gray-200 flex items-center gap-5 mx-auto max-w-7xl p-4 bg-gray-950 text-white transition duration-300 fixed top-0 left-0 right-0 z-10;
+.full-screen{
+  min-height:calc(100vh - 104px) ;
 }
