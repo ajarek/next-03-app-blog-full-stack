@@ -12,7 +12,7 @@ const DarkModeToggle = () => {
       <div className=''>🌙</div>
       <div className=''>🔆</div>
       <div
-        className='bg-teal-500 w-5 h-5 rounded-full absolute cursor-pointer'
+        className='bg-emerald-500 w-5 h-5 rounded-full absolute cursor-pointer'
         style={dark ? { left: "2px"} : { right: "2px"}}
       />
     </div>

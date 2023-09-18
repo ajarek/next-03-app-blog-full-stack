@@ -7,7 +7,7 @@ import DarkModeToggle from '../DarkModeToggle/DarkModeToggle'
 const links = [
   {
     id: 1,
-    title: 'Home',
+    title: 'Główna',
     url: '/',
   },
   {
@@ -22,17 +22,17 @@ const links = [
   },
   {
     id: 4,
-    title: 'About',
+    title: 'O_Nas',
     url: '/about',
   },
   {
     id: 5,
-    title: 'Contact',
+    title: 'Kontakt',
     url: '/contact',
   },
   {
     id: 6,
-    title: 'Dashboard',
+    title: 'Panel',
     url: '/dashboard',
   },
 ]
@@ -40,7 +40,7 @@ const links = [
 const Navbar = () => {
   const [sessionStatus, setSessionStatus] = useState(true)
   return (
-    <div className='flex justify-between items-center px-10 h-16'>
+    <div className='flex justify-between items-center px-10 h-16 '>
       <Link
         href='/'
         className=''
@@ -63,14 +63,14 @@ const Navbar = () => {
             className=''
             onClick={() => alert('logged out')}
           >
-            Logout
+            Wyloguj
           </button>
         ) : (
           <button
             className=''
             onClick={() => alert('logged in')}
           >
-            Login
+            Zaloguj
           </button>
         )}
       </div>
