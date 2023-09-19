@@ -11,7 +11,6 @@ const Contact = () => {
           <Image
             src={Photo}
             alt=''
-            
             className='img-color'
           />
         </div>
