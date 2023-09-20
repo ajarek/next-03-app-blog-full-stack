@@ -18,23 +18,24 @@ const Category = ({ params }) => {
   return (
     <div className=''>
       <h1 className={''}>{params.category}</h1>
-      <div className={'grid grid-cols-3 gap-10 mt-5 place-items-center'}>
+      <div className={'flex flex-col gap-8'}>
         {data.map((item) => (
           <div
             key={item.id}
-            className=''
+            className='container'
           >
-            <div className={''}>
-              <p className={'mb-2'}>{item.desc}</p>
+            <div className={'flex-1 flex flex-col justify-evenly px-4'}>
+            <h1 className='title'>{item.title}</h1>
+              <p className={'text-xl'}>{item.desc}</p>
               <Button
                 text='Zobacz więcej'
                 url='#'
               />
             </div>
-            <div className='imgContainer mt-4 '>
-              <h1 className='position-absolute'>{item.title}</h1>
+            <div className='imgContainer'>
+              
               <Image
-                className={'img-no-filter'}
+                className={'.img-no-filter'}
                 fill
                 src={item.image}
                 alt=''
