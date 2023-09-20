@@ -9,13 +9,13 @@ body {
   overflow-x: hidden;
 }
 .light {
-  background-color: white;
+  background-color: #ffffff;
   color: #111;
 }
 
 .dark {
   background-color: #111;
-  color: #bbb;
+  color: #ffffff;
 }
 .theme{
   transition: 1s all ease;
@@ -68,7 +68,9 @@ h2 {
 .input,.textarea{
   height: 50px;
   background-color: transparent;
-  border: 2px solid white;
+  color: #808080;
+  border: 3px solid #808080;
+  outline: none;
   padding:0 16px ;
   margin-bottom: 16px;
 }
@@ -83,7 +85,15 @@ h2 {
   position: relative;
   background-size: cover !important;
 }
-
+.title-portfolio{
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size:40px;
+  font-weight: 500;
+  transition: all 0.5s ease;
+  color: #808080;
+}
 .item:nth-child(1) {
   background: url("/illustration.png");
 }
@@ -106,7 +116,7 @@ h2 {
   font-weight: bold;
 }
 
-.item:hover .title {
+.item:hover .title-portfolio {
   color: #53c28b;
 }
 .imgContainer{
