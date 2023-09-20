@@ -17,6 +17,9 @@ body {
   background-color: #111;
   color: #bbb;
 }
+.theme{
+  transition: 1s all ease;
+}
 h1,
 h2 {
   @apply font-bold ;
