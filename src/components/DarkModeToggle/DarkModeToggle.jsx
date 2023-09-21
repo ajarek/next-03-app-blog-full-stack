@@ -5,13 +5,13 @@ import { ThemeContext } from '../../context/ThemeContext'
 
 const DarkModeToggle = () => {
   const { setMode, mode } = useContext(ThemeContext)
-
+  
   const toggle = () => {
     setMode((prev) => (prev === 'dark' ? 'light' : 'dark'))
   }
   return (
     <div
-      className='flex items-center border rounded-xl relative'
+      className='flex items-center border  border-emerald-500 rounded-xl relative'
       onClick={toggle}
     >
       <div className=''>🌙</div>

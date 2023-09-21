@@ -1,8 +1,43 @@
-import React from 'react'
+import Image from 'next/image'
+import { notFound } from 'next/navigation'
 
-const BlogPost = () => {
+async function getData(id) {
+  const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
+    cache: 'no-store',
+  })
+
+  if (!res.ok) {
+    return notFound()
+  }
+
+  return res.json()
+}
+
+export async function generateMetadata({ params }) {
+  const post = await getData(params.id)
+  return {
+    title: post.title,
+    description: post.body,
+  }
+}
+
+const BlogPost = async ({ params }) => {
+  const data = await getData(params.id)
   return (
-    <div>BlogPost</div>
+    <div className={'full-screen grid  grid-cols-2 gap-2 px-10 py-5 place-items-center'}>
+      <div className={''}>
+        <Image
+          src={'/apps.jpg'}
+          alt=''
+          width={600}
+          height={600}
+        />
+      </div>
+      <div className={'px-4'}>
+        <h1 className={'text-xl uppercase'}>{data.title}</h1>
+        <p className={'mt-4'}>{data.body}</p>
+      </div>
+    </div>
   )
 }
 
