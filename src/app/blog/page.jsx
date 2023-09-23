@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 async function getData() {
-  const res = await fetch("https://jsonplaceholder.typicode.com/posts", {
+  const res = await fetch("http://localhost:3000/api/posts", {
     cache: "no-store",
   });
 
@@ -15,22 +15,25 @@ async function getData() {
 
 const Blog = async () => {
   const data = await getData();
-  const images=['/websites.jpg','/illustration.png','/about-photo.webp','/apps.jpg']
+  
   return (
     <div className={'flex flex-col p-10 gap-6'}>
       {data.map((item) => (
-        <Link href={`/blog/${item.id}`} className={'flex items-center shadow-sm shadow-slate-300 p-4'} key={item.id}>
+        <Link href={`/blog/${item._id}`} className={'flex items-center shadow-sm shadow-slate-300 p-4'} key={item._id}>
           <div className={'img-blog '}>
             <Image
-              src={images[ Math.floor(Math. random() * images. length)]}
+              src={item.img}
               alt=""
               fill
+              sizes="100%"
               className={'img-color '}
             />
           </div>
           <div className={'ml-8 p-4'}>
             <h1 className={'text-xl uppercase'}>{item.title}</h1>
-            <p className={''}>{item.body}</p>
+            <p className={''}>{item.desc}</p>
+            <p className={''}>{item.content}</p>
+            <p className={''}>{item.username}</p>
           </div>
         </Link>
       ))}

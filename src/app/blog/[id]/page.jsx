@@ -2,7 +2,7 @@ import Image from 'next/image'
 import { notFound } from 'next/navigation'
 
 async function getData(id) {
-  const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
+  const res = await fetch(`http://localhost:3000/api/posts/${id}`, {
     cache: 'no-store',
   })
 
@@ -27,7 +27,7 @@ const BlogPost = async ({ params }) => {
     <div className={'full-screen grid  grid-cols-2 gap-2 px-10 py-5 place-items-center'}>
       <div className={''}>
         <Image
-          src={'/apps.jpg'}
+          src={data.img}
           alt=''
           width={600}
           height={600}
@@ -35,7 +35,9 @@ const BlogPost = async ({ params }) => {
       </div>
       <div className={'px-4'}>
         <h1 className={'text-xl uppercase'}>{data.title}</h1>
-        <p className={'mt-4'}>{data.body}</p>
+        <p className={'mt-4'}>{data.desc}</p>
+        <p className={'mt-4'}>{data.content}</p>
+        <p className={'mt-4'}>{data.username}</p>
       </div>
     </div>
   )

@@ -37,6 +37,7 @@ const Category = ({ params }) => {
               <Image
                 className={'.img-no-filter'}
                 fill
+                sizes='100%'
                 src={item.image}
                 alt=''
               />
