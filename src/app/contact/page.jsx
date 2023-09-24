@@ -1,6 +1,12 @@
 import Button from '@/components/Button/Button'
 import Image from 'next/image'
 import Photo from 'public/contact.png'
+
+export const metadata = {
+  title:'Contact',
+  description:'This is contact'
+}
+
 const Contact = () => {
   return (
     <div className='full-screen p-10'>
