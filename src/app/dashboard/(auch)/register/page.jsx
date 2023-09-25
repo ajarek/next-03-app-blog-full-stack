@@ -34,9 +34,9 @@ const Register = () => {
       <button className={'w-80 h-12 bg-green-500'}>Zarejestruj</button>
       {error && "Something went wrong!"}
     </form>
-    <span className={'py-4'}>- OR -</span>
+    <span className={'py-4'}>- LUB -</span>
     <Link className={'text-xl'} href="/dashboard/login">
-      Login with an existing account
+    Zaloguj się na istniejące konto
     </Link>
   </div>
   )
