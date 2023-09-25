@@ -1,12 +1,13 @@
 'use client'
-
+import { useSession } from 'next-auth/react'
 import React, { useEffect, useState } from 'react'
 
 const Dashboard = () => {
   const [data, setData] = useState([])
   const [err, setErr] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
-
+  const session = useSession()
+  console.log(session)
   useEffect(() => {
     async function getData() {
       setIsLoading(true)
@@ -17,7 +18,7 @@ const Dashboard = () => {
       if (!res.ok) {
         setErr(true)
       }
-     const data =await res.json()
+      const data = await res.json()
       setData(data)
       setIsLoading(false)
     }
