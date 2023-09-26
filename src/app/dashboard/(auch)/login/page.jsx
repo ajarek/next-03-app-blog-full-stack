@@ -4,10 +4,23 @@ import React, {useState} from 'react'
 import Link from "next/link";
 import Image from 'next/image'
 import GitHub from 'public/github.png'
+import { useRouter } from "next/navigation";
+import { useSession } from 'next-auth/react'
 
 const Login = () => {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
+
+  const router = useRouter();
+  const session = useSession()
+  if (session.status === "loading") {
+    return <p>Loading...</p>;
+  }
+
+  if (session.status === "authenticated") {
+    router?.push("/dashboard");
+  }
+
   const handleSubmit=(e)=>{
     e.preventDefault() 
     console.log(e);
