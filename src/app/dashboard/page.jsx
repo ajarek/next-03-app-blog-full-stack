@@ -1,5 +1,4 @@
 'use client'
-import Image from 'next/image'
 import { useSession } from 'next-auth/react'
 import React, { useEffect, useState } from 'react'
 import { useRouter } from "next/navigation";
@@ -40,12 +39,7 @@ const Dashboard = () => {
   if (session.status === "authenticated") {
   return (
   <div className= 'bg-slate-300 p-10'>
-    <Image
-    src={session.data.user.image}
-    alt='foto'
-    width={60}
-    height={60}
-    />
+    <div className='text-black'>Witaj: {session.data.user.name}</div>
     <div className='text-black'>{session.data.user.email}</div>
   </div>
   )

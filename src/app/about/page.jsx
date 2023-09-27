@@ -8,7 +8,7 @@ const About = () => {
       <div className='h-80 w-full'>
         <Image
           src={Photo}
-          alt=''
+          alt='photo'
           className='img'
         />
       </div>

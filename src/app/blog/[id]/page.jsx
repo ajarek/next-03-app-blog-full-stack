@@ -28,7 +28,7 @@ const BlogPost = async ({ params }) => {
       <div className={''}>
         <Image
           src={data.img}
-          alt=''
+          alt='img'
           width={600}
           height={600}
         />

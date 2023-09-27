@@ -10,10 +10,10 @@ export default function Home() {
       <Button text={'Zobacz Nasze Prace'} url={'/portfolio'}/>
      </div>
      <div className=' img-motion  flex justify-center items-center'>
-      <Image src={Hero} alt="" style={{
+      <Image src={Hero} alt="hero" style={{
         width: 'auto',
         height: '100%',
-      }}
+      }} priority={true}
        /></div>
     </main>
   )

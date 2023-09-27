@@ -10,9 +10,9 @@ import { useSession } from 'next-auth/react'
 const Login = () => {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
-
   const router = useRouter();
   const session = useSession()
+
   if (session.status === "loading") {
     return <p>Loading...</p>;
   }
@@ -23,7 +23,13 @@ const Login = () => {
 
   const handleSubmit=(e)=>{
     e.preventDefault() 
-    console.log(e);
+     const email = e.target[0].value;
+    const password = e.target[1].value;
+
+    signIn("credentials", {
+      email,
+      password,
+    });
   }
   return (
     <div className={'min-h-screen p-10 flex flex-col justify-center items-center'}>
@@ -54,8 +60,9 @@ const Login = () => {
     >
       Zaloguj się z Github <Image
       src={GitHub}
+      alt='logo github'
       width={60}
-      height={60}
+      height={35}
       />
     </button>
     <span className={'py-4'}>- LUB -</span>

@@ -23,7 +23,7 @@ const Blog = async () => {
           <div className={'img-blog '}>
             <Image
               src={item.img}
-              alt=""
+              alt="item"
               fill
               sizes="100%"
               className={'img-color '}
