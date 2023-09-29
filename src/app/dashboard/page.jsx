@@ -46,9 +46,11 @@ const Dashboard = () => {
           content,
           username: session.data.user.name,
         }),
+       
       });
-      mutate();
+     
       e.target.reset()
+      router?.push("/blog")
     } catch (err) {
       console.log(err);
     }

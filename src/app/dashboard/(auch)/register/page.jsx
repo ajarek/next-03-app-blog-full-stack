@@ -12,6 +12,7 @@ const Register = () => {
     const name =e.target[0].value
     const email =e.target[1].value
     const password =e.target[2].value
+    console.log(name,email,password);
     try{
          const res = await fetch('/api/auth/register',{
           method:"POST",
@@ -23,7 +24,7 @@ const Register = () => {
           })
         
          })
-        
+         
          res.status===201 && router.push('/dashboard/login')
 
     }catch(error){
