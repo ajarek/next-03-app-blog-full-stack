@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import { useRouter } from "next/navigation";
 import DarkModeToggle from '../DarkModeToggle/DarkModeToggle'
 import { signOut, useSession } from "next-auth/react";
 const links = [
@@ -39,6 +40,11 @@ const links = [
 
 const Navbar = () => {
   const session = useSession();
+  const router = useRouter();
+  const handleSignOut = ()=>{
+    signOut()
+    router?.push("/dashboard/login");
+  }
   return (
     <div className='flex justify-between items-center px-10 h-16 '>
       <Link
@@ -59,7 +65,7 @@ const Navbar = () => {
           </Link>
         ))}
         {session.status === "authenticated" && (
-          <button className={'p-1 bg-red-500 rounded'} onClick={signOut}>
+          <button className={'p-1 bg-red-500 rounded'} onClick={handleSignOut}>
             Wyloguj
           </button>
         )}

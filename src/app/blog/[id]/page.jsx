@@ -19,6 +19,7 @@ async function getData(id) {
 
 export async function generateMetadata({ params }) {
   const post = await getData(params.id)
+  
   return {
     title: post.title,
     description: post.desc,
@@ -26,8 +27,8 @@ export async function generateMetadata({ params }) {
 }
 
 const BlogPost = async ({ params }) => {
-  
-  const data = await getData(params.id)
+
+ const data = await getData(params.id)
 
   
   return (
